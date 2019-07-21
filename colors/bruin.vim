@@ -1,7 +1,7 @@
 " bruin.vim -- Vim color scheme.
-" Author:      foo (foo@foo.foo)
-" Webpage:     http://www.example.com
-" Description: Lorem ipsum dolor sit amet.
+" Author:      Romain Lafourcade (romainlafourcade@gmail.com)
+" Webpage:     https://git.sr.ht/~romainl/vim-bruin
+" Description: More like 'typographyscheme' than 'colorscheme'.
 
 hi clear
 
@@ -11,40 +11,38 @@ endif
 
 let colors_name = "bruin"
 
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-
 if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi Normal ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
 
     set background=dark
 
     hi NonText ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#808080 gui=NONE
-    hi Comment ctermbg=NONE ctermfg=8 cterm=italic guibg=NONE guifg=#808080 gui=italic
-    hi Constant ctermbg=NONE ctermfg=15 cterm=NONE guibg=NONE guifg=#ffffff gui=NONE
-    hi Error ctermbg=9 ctermfg=15 cterm=NONE guibg=#ff0000 guifg=#ffffff gui=NONE
+    hi Comment ctermbg=NONE ctermfg=NONE cterm=italic guibg=NONE guifg=NONE gui=italic
+    hi Constant ctermbg=NONE ctermfg=NONE cterm=bold guibg=NONE guifg=NONE gui=bold
+    hi Error ctermbg=15 ctermfg=9 cterm=reverse guibg=#ffffff guifg=#ff0000 gui=reverse
     hi Identifier ctermbg=NONE ctermfg=NONE cterm=underline,bold guibg=NONE guifg=NONE gui=underline,bold
     hi Ignore ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi PreProc ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi Special ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi Statement ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi String ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
+    hi Special ctermbg=NONE ctermfg=NONE cterm=italic guibg=NONE guifg=NONE gui=italic
+    hi Statement ctermbg=NONE ctermfg=NONE cterm=bold guibg=NONE guifg=NONE gui=bold
     hi Todo ctermbg=NONE ctermfg=NONE cterm=reverse guibg=NONE guifg=NONE gui=reverse
-    hi Type ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi Underlined ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi StatusLine ctermbg=7 ctermfg=8 cterm=NONE guibg=#c0c0c0 guifg=#808080 gui=NONE
-    hi StatusLineNC ctermbg=8 ctermfg=7 cterm=NONE guibg=#808080 guifg=#c0c0c0 gui=NONE
+    hi Type ctermbg=NONE ctermfg=NONE cterm=bold,italic guibg=NONE guifg=NONE gui=bold,italic
+    hi Underlined ctermbg=NONE ctermfg=NONE cterm=underline guibg=NONE guifg=NONE gui=underline
+    hi StatusLine ctermbg=NONE ctermfg=NONE cterm=reverse guibg=NONE guifg=NONE gui=reverse
+    hi StatusLineNC ctermbg=NONE ctermfg=NONE cterm=underline guibg=NONE guifg=NONE gui=underline
+    hi StatusLineTerm ctermbg=NONE ctermfg=NONE cterm=reverse guibg=NONE guifg=NONE gui=reverse
+    hi StatusLineTermNC ctermbg=NONE ctermfg=NONE cterm=underline guibg=NONE guifg=NONE gui=underline
     hi VertSplit ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi TabLine ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi TabLineFill ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi TabLineSel ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
+    hi TabLine ctermbg=NONE ctermfg=NONE cterm=underline guibg=NONE guifg=NONE gui=underline
+    hi TabLineFill ctermbg=NONE ctermfg=NONE cterm=underline guibg=NONE guifg=NONE gui=underline
+    hi TabLineSel ctermbg=NONE ctermfg=NONE cterm=reverse guibg=NONE guifg=NONE gui=reverse
     hi Title ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi CursorLine ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi LineNr ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi CursorLineNr ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi helpLeadBlank ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi helpNormal ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi Visual ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
+    hi Visual ctermbg=NONE ctermfg=darkcyan cterm=reverse,bold guibg=NONE guifg=darkcyan gui=reverse,bold
     hi VisualNOS ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi Pmenu ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi PmenuSbar ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
@@ -58,20 +56,20 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi DiffChange ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi DiffDelete ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi DiffText ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi IncSearch ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi Search ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi Directory ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi MatchParen ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
+    hi IncSearch ctermbg=10 ctermfg=0 cterm=NONE guibg=#00ff00 guifg=#000000 gui=NONE
+    hi Search ctermbg=11 ctermfg=0 cterm=NONE guibg=#ffff00 guifg=#000000 gui=NONE
+    hi Directory ctermbg=NONE ctermfg=NONE cterm=bold guibg=NONE guifg=NONE gui=bold
+    hi MatchParen ctermbg=NONE ctermfg=green cterm=reverse guibg=NONE guifg=green gui=reverse
     hi SpellBad ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE guisp=#ff0000
     hi SpellCap ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE guisp=#0000ff
     hi SpellLocal ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE guisp=#ff00ff
     hi SpellRare ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE guisp=#00ffff
-    hi ColorColumn ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
+    hi ColorColumn ctermbg=darkred ctermfg=NONE cterm=NONE guibg=darkred guifg=NONE gui=NONE
     hi SignColumn ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi ErrorMsg ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi ModeMsg ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-    hi MoreMsg ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
+    hi ModeMsg ctermbg=NONE ctermfg=10 cterm=NONE guibg=NONE guifg=#00ff00 gui=NONE
+    hi MoreMsg ctermbg=NONE ctermfg=13 cterm=NONE guibg=NONE guifg=#ff00ff gui=NONE
     hi Question ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
+    hi WarningMsg ctermbg=NONE ctermfg=9 cterm=NONE guibg=NONE guifg=#ff0000 gui=NONE
     hi Cursor ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi CursorColumn ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
     hi QuickFixLine ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
@@ -89,31 +87,32 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     set background=dark
 
     hi NonText ctermbg=NONE ctermfg=darkgray cterm=NONE
-    hi Comment ctermbg=NONE ctermfg=darkgray cterm=italic
-    hi Constant ctermbg=NONE ctermfg=white cterm=NONE
-    hi Error ctermbg=red ctermfg=white cterm=NONE
+    hi Comment ctermbg=NONE ctermfg=NONE cterm=italic
+    hi Constant ctermbg=NONE ctermfg=NONE cterm=bold
+    hi Error ctermbg=white ctermfg=red cterm=reverse
     hi Identifier ctermbg=NONE ctermfg=NONE cterm=underline,bold
     hi Ignore ctermbg=NONE ctermfg=NONE cterm=NONE
     hi PreProc ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi Special ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi Statement ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi String ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi Special ctermbg=NONE ctermfg=NONE cterm=italic
+    hi Statement ctermbg=NONE ctermfg=NONE cterm=bold
     hi Todo ctermbg=NONE ctermfg=NONE cterm=reverse
-    hi Type ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi Underlined ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi StatusLine ctermbg=gray ctermfg=darkgray cterm=NONE
-    hi StatusLineNC ctermbg=darkgray ctermfg=gray cterm=NONE
+    hi Type ctermbg=NONE ctermfg=NONE cterm=bold,italic
+    hi Underlined ctermbg=NONE ctermfg=NONE cterm=underline
+    hi StatusLine ctermbg=NONE ctermfg=NONE cterm=reverse
+    hi StatusLineNC ctermbg=NONE ctermfg=NONE cterm=underline
+    hi StatusLineTerm ctermbg=NONE ctermfg=NONE cterm=reverse
+    hi StatusLineTermNC ctermbg=NONE ctermfg=NONE cterm=underline
     hi VertSplit ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi TabLine ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi TabLineFill ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi TabLineSel ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi TabLine ctermbg=NONE ctermfg=NONE cterm=underline
+    hi TabLineFill ctermbg=NONE ctermfg=NONE cterm=underline
+    hi TabLineSel ctermbg=NONE ctermfg=NONE cterm=reverse
     hi Title ctermbg=NONE ctermfg=NONE cterm=NONE
     hi CursorLine ctermbg=NONE ctermfg=NONE cterm=NONE
     hi LineNr ctermbg=NONE ctermfg=NONE cterm=NONE
     hi CursorLineNr ctermbg=NONE ctermfg=NONE cterm=NONE
     hi helpLeadBlank ctermbg=NONE ctermfg=NONE cterm=NONE
     hi helpNormal ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi Visual ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi Visual ctermbg=NONE ctermfg=darkcyan cterm=reverse,bold
     hi VisualNOS ctermbg=NONE ctermfg=NONE cterm=NONE
     hi Pmenu ctermbg=NONE ctermfg=NONE cterm=NONE
     hi PmenuSbar ctermbg=NONE ctermfg=NONE cterm=NONE
@@ -127,20 +126,20 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi DiffChange ctermbg=NONE ctermfg=NONE cterm=NONE
     hi DiffDelete ctermbg=NONE ctermfg=NONE cterm=NONE
     hi DiffText ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi IncSearch ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi Search ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi Directory ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi MatchParen ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi IncSearch ctermbg=green ctermfg=black cterm=NONE
+    hi Search ctermbg=yellow ctermfg=black cterm=NONE
+    hi Directory ctermbg=NONE ctermfg=NONE cterm=bold
+    hi MatchParen ctermbg=NONE ctermfg=green cterm=reverse
     hi SpellBad ctermbg=NONE ctermfg=NONE cterm=NONE
     hi SpellCap ctermbg=NONE ctermfg=NONE cterm=NONE
     hi SpellLocal ctermbg=NONE ctermfg=NONE cterm=NONE
     hi SpellRare ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi ColorColumn ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi ColorColumn ctermbg=darkred ctermfg=NONE cterm=NONE
     hi SignColumn ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi ErrorMsg ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi ModeMsg ctermbg=NONE ctermfg=NONE cterm=NONE
-    hi MoreMsg ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi ModeMsg ctermbg=NONE ctermfg=green cterm=NONE
+    hi MoreMsg ctermbg=NONE ctermfg=magenta cterm=NONE
     hi Question ctermbg=NONE ctermfg=NONE cterm=NONE
+    hi WarningMsg ctermbg=NONE ctermfg=red cterm=NONE
     hi Cursor ctermbg=NONE ctermfg=NONE cterm=NONE
     hi CursorColumn ctermbg=NONE ctermfg=NONE cterm=NONE
     hi QuickFixLine ctermbg=NONE ctermfg=NONE cterm=NONE
@@ -152,10 +151,9 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
 endif
 
 hi link EndOfBuffer NonText
+hi link String Normal
 hi link Number Constant
-hi link StatusLineTerm StatusLine
-hi link StatusLineTermNC StatusLineNC
-hi link WarningMsg Error
+hi link ErrorMsg Error
 hi link CursorIM Cursor
 hi link Terminal Normal
 
@@ -177,5 +175,10 @@ let g:terminal_ansi_colors = [
         \ '#00ffff',
         \ '#ffffff',
         \ ]
+
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+
+set fillchars+=vert:│
 
 " Generated with RNB (https://github.com/romainl/vim-rnb)

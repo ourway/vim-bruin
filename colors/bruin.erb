@@ -41,12 +41,12 @@
     # The description should fit in a single line with no linefeed.
     # 'background' can be "light" or "dark".
     information = {
-        author:      "foo",
-        email:       "foo@foo.foo",
+        author:      "Romain Lafourcade",
+        email:       "romainlafourcade@gmail.com",
         name:        "bruin",
-        description: "Lorem ipsum dolor sit amet.",
+        description: "More like 'typographyscheme' than 'colorscheme'.",
         background:  "dark",
-        webpage:     "http://www.example.com"
+        webpage:     "https://git.sr.ht/~romainl/vim-bruin"
     }
 
     # Step 3: colors
@@ -120,34 +120,34 @@
         [ "Normal", "NONE", "NONE", "NONE" ],
         [ "NonText", "NONE", darkgray, "NONE" ],
         [ "EndOfBuffer","NonText" ],
-        [ "Comment", "NONE", darkgray, "italic" ],
-        [ "Constant", "NONE", white, "NONE" ],
-        [ "Error", red, white, "NONE" ],
+        [ "Comment", "NONE", "NONE", "italic" ],
+        [ "Constant", "NONE", "NONE", "bold" ],
+        [ "Error", white, red, "reverse" ],
         [ "Identifier", "NONE", "NONE", "underline,bold" ],
         [ "Ignore", "NONE", "NONE", "NONE" ],
         [ "PreProc", "NONE", "NONE", "NONE" ],
-        [ "Special", "NONE", "NONE", "NONE" ],
-        [ "Statement", "NONE", "NONE", "NONE" ],
-        [ "String", "NONE", "NONE", "NONE" ],
+        [ "Special", "NONE", "NONE", "italic" ],
+        [ "Statement", "NONE", "NONE", "bold" ],
+        [ "String", "Normal" ],
         [ "Number", "Constant" ],
         [ "Todo", "NONE", "NONE", "reverse" ],
-        [ "Type", "NONE", "NONE", "NONE" ],
-        [ "Underlined", "NONE", "NONE", "NONE" ],
-        [ "StatusLine", gray, darkgray, "NONE" ],
-        [ "StatusLineNC", darkgray, gray, "NONE" ],
-        [ "StatusLineTerm", "StatusLine" ],
-        [ "StatusLineTermNC", "StatusLineNC" ],
+        [ "Type", "NONE", "NONE", "bold,italic" ],
+        [ "Underlined", "NONE", "NONE", "underline" ],
+        [ "StatusLine", "NONE", "NONE", "reverse" ],
+        [ "StatusLineNC", "NONE", "NONE", "underline" ],
+        [ "StatusLineTerm", "NONE", "NONE", "reverse" ],
+        [ "StatusLineTermNC", "NONE", "NONE", "underline" ],
         [ "VertSplit", "NONE", "NONE", "NONE" ],
-        [ "TabLine", "NONE", "NONE", "NONE" ],
-        [ "TabLineFill", "NONE", "NONE", "NONE" ],
-        [ "TabLineSel", "NONE", "NONE", "NONE" ],
+        [ "TabLine", "NONE", "NONE", "underline" ],
+        [ "TabLineFill", "NONE", "NONE", "underline" ],
+        [ "TabLineSel", "NONE", "NONE", "reverse" ],
         [ "Title", "NONE", "NONE", "NONE" ],
         [ "CursorLine", "NONE", "NONE", "NONE" ],
         [ "LineNr", "NONE", "NONE", "NONE" ],
         [ "CursorLineNr", "NONE", "NONE", "NONE" ],
         [ "helpLeadBlank", "NONE", "NONE", "NONE" ],
         [ "helpNormal", "NONE", "NONE", "NONE" ],
-        [ "Visual", "NONE", "NONE", "NONE" ],
+        [ "Visual", "NONE", "darkcyan", "reverse,bold" ],
         [ "VisualNOS", "NONE", "NONE", "NONE" ],
         [ "Pmenu", "NONE", "NONE", "NONE" ],
         [ "PmenuSbar", "NONE", "NONE", "NONE" ],
@@ -161,21 +161,21 @@
         [ "DiffChange", "NONE", "NONE", "NONE" ],
         [ "DiffDelete", "NONE", "NONE", "NONE" ],
         [ "DiffText", "NONE", "NONE", "NONE" ],
-        [ "IncSearch", "NONE", "NONE", "NONE" ],
-        [ "Search", "NONE", "NONE", "NONE" ],
-        [ "Directory", "NONE", "NONE", "NONE" ],
-        [ "MatchParen", "NONE", "NONE", "NONE" ],
+        [ "IncSearch", green, black, "NONE" ],
+        [ "Search", yellow, black, "NONE" ],
+        [ "Directory", "NONE", "NONE", "bold" ],
+        [ "MatchParen", "NONE", "green", "reverse" ],
         [ "SpellBad", "NONE", "NONE", "NONE", red ],
         [ "SpellCap", "NONE", "NONE", "NONE", blue ],
         [ "SpellLocal", "NONE", "NONE", "NONE", magenta ],
         [ "SpellRare", "NONE", "NONE", "NONE", cyan ],
-        [ "ColorColumn", "NONE", "NONE", "NONE" ],
+        [ "ColorColumn", "darkred", "NONE", "NONE" ],
         [ "SignColumn", "NONE", "NONE", "NONE" ],
-        [ "ErrorMsg", "NONE", "NONE", "NONE" ],
-        [ "ModeMsg", "NONE", "NONE", "NONE" ],
-        [ "MoreMsg", "NONE", "NONE", "NONE" ],
+        [ "ErrorMsg", "Error" ],
+        [ "ModeMsg", "NONE", green, "NONE" ],
+        [ "MoreMsg", "NONE", magenta, "NONE" ],
         [ "Question", "NONE", "NONE", "NONE" ],
-        [ "WarningMsg", "Error" ],
+        [ "WarningMsg", "NONE", red, "NONE" ],
         [ "Cursor", "NONE", "NONE", "NONE" ],
         [ "CursorIM", "Cursor" ],
         [ "CursorColumn", "NONE", "NONE", "NONE" ],
@@ -326,9 +326,6 @@ endif
 
 let colors_name = "<%= information[:name].downcase %>"
 
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-
 if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
 <% for highlight in highlights -%>
 <% if highlight.length == 4 -%>
@@ -374,5 +371,10 @@ let g:terminal_ansi_colors = [
 <% end -%>
         \ ]
 <% end -%>
+
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+
+set fillchars+=vert:│
 
 " Generated with RNB (https://github.com/romainl/vim-rnb)
