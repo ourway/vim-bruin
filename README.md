@@ -15,3 +15,12 @@ WIP. Use at your own risk.
 * should work the same on *light* and *dark* background without human intervention
 
 ![sample](https://i.imgur.com/vrbNHXw.png)
+
+## Contributing
+
+Send your patches to [~romainl/vim-bruin@lists.sr.ht](mailto:~romainl/vim-bruin@lists.sr.ht) and follow them [over there](https://lists.sr.ht/~romainl/vim-bruin).
+
+### Reference
+
+* [git-send-email](https://git-send-email.io/)
+* [mailing list etiquette](https://man.sr.ht/lists.sr.ht/etiquette.md)
