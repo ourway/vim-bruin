@@ -13,9 +13,6 @@ let colors_name = "bruin"
 
 if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi Normal ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-
-    set background=dark
-
     hi NonText ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#808080 gui=NONE
     hi Comment ctermbg=NONE ctermfg=NONE cterm=italic guibg=NONE guifg=NONE gui=italic
     hi Constant ctermbg=NONE ctermfg=NONE cterm=bold guibg=NONE guifg=NONE gui=bold
@@ -83,9 +80,6 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     set t_Co=16
 
     hi Normal ctermbg=NONE ctermfg=NONE cterm=NONE
-
-    set background=dark
-
     hi NonText ctermbg=NONE ctermfg=darkgray cterm=NONE
     hi Comment ctermbg=NONE ctermfg=NONE cterm=italic
     hi Constant ctermbg=NONE ctermfg=NONE cterm=bold
